@@ -2,3 +2,12 @@ logging:
   level: INFO
   loggers:
     com.dropwizard: DEBUG
+
+mongoDBConnection:
+  credentials:
+    username: "coa" 
+    password: "coa"
+  seeds:
+    - host: "mongodb"
+      port: 27017
+  database: "library"

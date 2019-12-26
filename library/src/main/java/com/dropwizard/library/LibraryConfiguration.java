@@ -7,4 +7,6 @@ import javax.validation.constraints.*;
 
 public class LibraryConfiguration extends Configuration {
     // TODO: implement service configuration
+	
+	private MongoDBConnection mongoDBConnection;
 }

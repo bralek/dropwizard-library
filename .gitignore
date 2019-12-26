@@ -3,3 +3,4 @@ library/.classpath
 library/.gitignore
 library/.project
 library/.settings/
+library/target
