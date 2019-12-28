@@ -1,12 +1,21 @@
 package com.dropwizard.library;
 
 import io.dropwizard.Configuration;
+import io.dropwizard.db.DataSourceFactory;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.*;
+
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 public class LibraryConfiguration extends Configuration {
-    // TODO: implement service configuration
+    
+	@Valid
+	@NotNull
+	@JsonProperty
+	private DataSourceFactory database = new DataSourceFactory();
 	
-	private MongoDBConnection mongoDBConnection;
+	public DataSourceFactory getDatabaseConfiguration() {
+		return database;
+	}
 }
