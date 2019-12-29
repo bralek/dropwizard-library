@@ -21,8 +21,12 @@ import com.dropwizard.library.validators.BookValidator;
 
 @Path("/book")
 public class BookResource {
-	@Inject
+//	@Inject
 	private BookDAO bookDao;
+	
+	public BookResource(BookDAO bookDao) {
+		this.bookDao = bookDao;
+	}
 
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON})

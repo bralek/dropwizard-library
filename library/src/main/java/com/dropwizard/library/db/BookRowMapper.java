@@ -14,7 +14,7 @@ public class BookRowMapper implements RowMapper<Book>{
 	public Book map(ResultSet rs, StatementContext ctx) throws SQLException {
 		// TODO Auto-generated method stub
 		Book book = new Book();
-		book.setId(rs.getInt("id"));
+		book.setId(rs.getLong("id"));
 		book.setAuthors(rs.getString("authors"));
 		book.setGenre(rs.getString("genre"));
 		book.setIsbn(rs.getString("isbn"));

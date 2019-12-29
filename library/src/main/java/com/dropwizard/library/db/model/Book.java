@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class Book {
 	@ColumnName("id")
-	private Integer id;
+	private Long id;
 	@ColumnName("authors")
 	private String authors;
 	@ColumnName("page_number")
@@ -20,10 +20,11 @@ public class Book {
 	private String genre;
 	@ColumnName("isbn")
 	private String isbn;
-	public Integer getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getAuthors() {

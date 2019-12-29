@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 public class BookDTO {
 	@JsonProperty
-	private Integer id;
+	private Long id;
 	@JsonProperty
 	private List<String> authors;
 	@JsonProperty
@@ -22,10 +22,11 @@ public class BookDTO {
 	private String genre;
 	@JsonProperty
 	private String isbn;
-	public Integer getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public List<String> getAuthors() {
