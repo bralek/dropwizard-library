@@ -16,6 +16,7 @@ public class BookMapper {
 		book.setIsbn(dto.getIsbn());
 		book.setPageNumber(dto.getPageNumber());
 		book.setAuthors(dto.getAuthors().stream().collect(Collectors.joining(",")));
+		book.setTitle(dto.getTitle());
 		return book;
 	}
 	
@@ -33,6 +34,8 @@ public class BookMapper {
 		dto.setIsbn(book.getIsbn());
 		dto.setPageNumber(book.getPageNumber());
 		dto.setAuthors(Arrays.asList(book.getAuthors().split(",")));
+		dto.setId(book.getId());
+		dto.setTitle(book.getTitle());
 		return dto;
 	}
 	

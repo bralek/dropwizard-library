@@ -9,7 +9,7 @@ public class BookValidator {
 	public static List<String> validate(List<BookDTO> books) {
 		List<String> validationMessages = new ArrayList<String>();
 		books.forEach(b -> {
-			if (b.getIsbn().length() < 13 || b.getIsbn().length() < 10) {
+			if (b.getIsbn().length() != 13 && b.getIsbn().length() != 10) {
 				validationMessages.add("Book with ISBN: " + b.getIsbn() + " has wrong ISBN");
 			}
 			if (b.getAuthors().isEmpty()) {

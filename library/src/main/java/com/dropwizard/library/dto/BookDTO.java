@@ -22,6 +22,8 @@ public class BookDTO {
 	private String genre;
 	@JsonProperty
 	private String isbn;
+	@JsonProperty
+	private String title;
 	
 	public Long getId() {
 		return id;
@@ -53,6 +55,11 @@ public class BookDTO {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	
-	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+		
 }

@@ -19,6 +19,7 @@ public class BookRowMapper implements RowMapper<Book>{
 		book.setGenre(rs.getString("genre"));
 		book.setIsbn(rs.getString("isbn"));
 		book.setPageNumber(rs.getInt("page_number"));
+		book.setTitle(rs.getString("title"));
 		return book;
 	}
 

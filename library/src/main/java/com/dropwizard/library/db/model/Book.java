@@ -12,6 +12,8 @@ import lombok.ToString;
 public class Book {
 	@ColumnName("id")
 	private Long id;
+	@ColumnName("title")
+	private String title;
 	@ColumnName("authors")
 	private String authors;
 	@ColumnName("page_number")
@@ -26,7 +28,7 @@ public class Book {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
+	}	
 	public String getAuthors() {
 		return authors;
 	}
@@ -50,6 +52,12 @@ public class Book {
 	}
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 }

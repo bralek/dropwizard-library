@@ -11,11 +11,15 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import com.dropwizard.library.db.model.Book;
 
 public interface BookDAO {
-	@SqlUpdate("insert into books (authors, page_number, genre, isbn) values <books>")
-	void insertBooks(@BindBeanList(value = "books", propertyNames = {"authors", "pageNumber", "genre", "isbn"}) List<Book> books);
+	@SqlUpdate("insert into books (authors, page_number, genre, isbn, title) values <books>")
+	void insertBooks(@BindBeanList(value = "books", propertyNames = {"authors", "pageNumber", "genre", "isbn", "title"}) List<Book> books);
 	
 	@SqlQuery("select * from books where isbn in (<isbns>)")
 	@RegisterRowMapper(BookRowMapper.class)
 	List<Book> findByIsbns(@BindList(value = "isbns") List<String> isbns);
+	
+	@SqlQuery("select * from books")
+	@RegisterRowMapper(BookRowMapper.class)
+	List<Book> findAllBooks();
 
 }

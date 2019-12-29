@@ -1,5 +1,6 @@
 package com.dropwizard.library.resources;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -21,8 +22,10 @@ import com.dropwizard.library.validators.BookValidator;
 
 @Path("/book")
 public class BookResource {
-//	@Inject
+	@Inject
 	private BookDAO bookDao;
+	
+	public BookResource () {}
 	
 	public BookResource(BookDAO bookDao) {
 		this.bookDao = bookDao;
@@ -44,7 +47,12 @@ public class BookResource {
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response getBooks(@QueryParam(value = "isbn") List<String> isbns) {
-		List<Book> books = bookDao.findByIsbns(isbns);
+		List<Book> books = new ArrayList<Book>();
+		if (isbns.isEmpty()) {
+			books = bookDao.findAllBooks();
+		} else {
+			books = bookDao.findByIsbns(isbns);
+		}
 		List<BookDTO> dtos = BookMapper.bookToBookDto(books);
 		return Response.ok().entity(dtos).build();
 	}
